@@ -22,7 +22,7 @@ email: federico (dot) madotto (at) gmail.com # add your Email address
 default-cover-image: default-cover.jpg
 
 # Disqus
-diqcus-identifier: federicomadotto # add your discus identifier
+disqus-identifier: federicomadotto # add your disqus identifier
 
 # Tracker
 analytics: # Google Analytics
@@ -31,5 +31,10 @@ analytics: # Google Analytics
 markdown: kramdown
 plugins:
   - jekyll-sitemap
+  - jekyll-feed
 
-exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock"]
+# exclude:
+#   - "node_modules"
+#   - "gulpfile.js"
+#   - "package.json"
+#   - "yarn.lock"]

@@ -3,6 +3,8 @@ _site
 .jekyll-metadata
 yarn.lock
 node_modules/
+Gemfile.lock
+CNAME
 
 ### macOS ###
 *.DS_Store
