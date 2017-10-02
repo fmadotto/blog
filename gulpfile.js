@@ -105,6 +105,10 @@ gulp.task('cleanup-not-minified', function() {
   return del.sync(['_site/assets/javascript/main.js', '_site/assets/stylesheets/']);
 });
 
+gulp.task('cleanup-gh-pages-cache', function() {
+  return del.sync(['.publish']);
+});
+
 gulp.task('build', function (callback) {
   runSequence(
     'jekyll',
@@ -144,7 +148,7 @@ gulp.task('push', function (callback) {
 
 // Fully build and deploy Jekyll site
 gulp.task('deploy', function() {
-  runSequence('build', 'push');
+  runSequence('build', 'push', 'cleanup-gh-pages-cache');
 });
 
 gulp.task('default', function (callback) {
