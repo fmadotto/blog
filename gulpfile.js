@@ -137,16 +137,14 @@ gulp.task('watch', function () {
   gulp.watch(['*.html', '*.md', '_layouts/*.html', '_includes/*.html', '_posts/*'], ['rebuild']);
 });
 
-// Push either to the master or gh-pages branch
 gulp.task('push', function (callback) {
-  return gulp.src('dist/**/*')
-    .pipe(gulpIf(!argv.ghp, ghPages({ branch: 'master' })))
-    .pipe(gulpIf(argv.ghp, ghPages()));
+  return gulp.src('_site/**/*')
+    .pipe(ghPages());
 });
 
 // Fully build and deploy Jekyll site
 gulp.task('deploy', function() {
-  runSequence('build', 'push', 'clean');
+  runSequence('build', 'push');
 });
 
 gulp.task('default', function (callback) {
