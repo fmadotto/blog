@@ -4,6 +4,7 @@ _site
 yarn.lock
 node_modules/
 Gemfile.lock
+**/*.min.*
 CNAME
 
 ### macOS ###

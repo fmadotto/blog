@@ -33,8 +33,8 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
 
-# exclude:
-#   - "node_modules"
-#   - "gulpfile.js"
-#   - "package.json"
-#   - "yarn.lock"]
+exclude:
+  - "package.json"
+  - "node_modules"
+  - "gulpfile.js"
+  - "Gemfile*"
