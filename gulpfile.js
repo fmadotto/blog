@@ -137,7 +137,7 @@ gulp.task('watch', function () {
   gulp.watch('assets/stylesheets/**/*', ['rebuild']);
   gulp.watch('assets/javascript/**/*.js', ['optimize-js']);
   gulp.watch('assets/images/**/*', ['optimize-images']);
-  gulp.watch(['*.html', '*.md', '_layouts/**/*.html', '_includes/**/*.html', '_posts/*'], ['rebuild']);
+  gulp.watch(['_config.yml', 'gulpfile.js', '*.html', '*.md', '_layouts/**/*.html', '_includes/**/*.html', '_posts/*'], ['rebuild']);
 });
 
 gulp.task('push', function (callback) {
