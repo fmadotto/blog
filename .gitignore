@@ -4,7 +4,6 @@ _site
 yarn.lock
 node_modules/
 Gemfile.lock
-**/*.min.*
 .publish
 
 ### macOS ###

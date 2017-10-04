@@ -1,3 +1,21 @@
 /**
  * Basic typography style for copy text
  */
+
+body {
+  font-family: $font-family-serif;
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-base;
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $font-family-sans-serif;
+    font-weight: $font-weight-bold;
+    line-height: $headings-line-height;
+    margin-top: 56px;
+  }
+  
+  @include media-breakpoint-up(lg) {
+    font-size: $font-size-lg;
+  }
+}
