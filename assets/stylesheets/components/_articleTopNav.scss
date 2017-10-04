@@ -1,0 +1,73 @@
+#articleTopNav {
+  position: fixed;
+  top: 0px;
+
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+  transition: all 0.5s;
+
+  .navbar-brand,
+  .navbar-toggler,
+  .navbar-nav
+    > li.nav-item
+      > a {
+    padding: 15px 20px;
+
+    font-family: $font-family-sans-serif;
+    font-weight: 800;
+    color: $white;
+    
+    &:focus,
+    &:hover {
+      color: $gray-800;
+    }
+  }
+
+  .navbar-brand {
+    font-size: $font-size-lg;
+  }
+
+  .navbar-toggler {
+    border-color: $white;
+    &:focus,
+    &:hover {
+      border-color: $gray-800;
+    }
+  }
+  
+  .navbar-toggler,
+  .navbar-nav
+  > li.nav-item
+  > a {
+    text-transform: uppercase;
+    font-size: $font-size-sm;
+  }
+
+  &.is-not-at-the-top {
+    transform: translate3d(0, -100%, 0);
+    
+    background-color: $white;
+    border-bottom: 1px solid $gray-400;
+
+    .navbar-toggler {
+      border-color: $gray-800;
+    }
+
+    .navbar-brand,
+    .navbar-toggler,
+    .navbar-nav
+      > li.nav-item
+        > a {
+      color: $gray-800;
+      &:focus,
+      &:hover {
+        color: $color-super-mega-beautiful;
+      }
+    }
+  }
+
+  &.is-visible {
+    /* if the user changes the scrolling direction, we show the header */
+    transform: translate3d(0, 0, 0);
+  }
+}

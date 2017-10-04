@@ -37,27 +37,25 @@ gulp.task('jekyll', function () {
 });
 
 gulp.task('optimize-css', function () {
-  return gulp.src('_site/assets/stylesheets/style.scss')
+  return gulp.src('assets/stylesheets/main.scss')
     .pipe(sass())
     .pipe(importCss())
     .pipe(autoprefixer())
-    .pipe(uncss({
-      html: glob.sync("_site/**/*.html"),
-      ignore: [
-        'label.active',
-        '.dark-mode',
-        'span.tweet-time',
-        /(#|\.)(is-)/,
-        /(#|\.)(has-)/,
-        /(#|\.)(js-)/
-      ]
-    }))
     .pipe(minifyCss({
       keepBreaks: false
     }))
-    .pipe(rename('style.min.css'))
+    .pipe(rename('main.min.css'))
     .pipe(browserSync.reload({stream:true}))
     .pipe(gulp.dest('_site/assets/stylesheets/'));
+});
+
+gulp.task('insert-image-captions', function () {
+  return gulp.src('_site/**/*.html')
+    .pipe(replace(/<p>(<img .*?alt=\"(.*?)\".*?>)<\/p>/g, function (match, p1, p2, offset, string) {
+      return '<figure>\n' + p1 + '\n<figcaption>' + p2 + '</figcaption>\n</figure>';
+    }))
+    .pipe(browserSync.reload({stream:true}))
+    .pipe(gulp.dest('_site/'));
 });
 
 gulp.task('optimize-html', function () {
@@ -65,8 +63,8 @@ gulp.task('optimize-html', function () {
     .pipe(minifyHTML({
       quotes: true
     }))
-    .pipe(replace(/<link rel="stylesheet" href=\"\/assets\/stylesheets\/style.min.css\"[^>]*>/, function (s) {
-      var style = fs.readFileSync('_site/assets/stylesheets/style.min.css', 'utf8');
+    .pipe(replace(/<link rel="stylesheet" href=\"\/assets\/stylesheets\/main.min.css\"[^>]*>/, function (s) {
+      var style = fs.readFileSync('_site/assets/stylesheets/main.min.css', 'utf8');
       return '<style>\n' + style + '\n</style>';
     }))
     .pipe(browserSync.reload({stream:true}))
@@ -102,7 +100,7 @@ gulp.task('optimize-images', function () {
 });
 
 gulp.task('cleanup-not-minified', function() {
-  return del.sync(['_site/assets/javascript/main.js', '_site/assets/stylesheets/']);
+  return del.sync(['_site/assets/javascript/main.js', '_site/assets/stylesheets/', '_site/assets/css/']);
 });
 
 gulp.task('cleanup-gh-pages-cache', function() {
@@ -112,6 +110,7 @@ gulp.task('cleanup-gh-pages-cache', function() {
 gulp.task('build', function (callback) {
   runSequence(
     'jekyll',
+    'insert-image-captions',
     'optimize-images',
     'optimize-css',
     'optimize-js',
@@ -138,7 +137,7 @@ gulp.task('watch', function () {
   gulp.watch('assets/stylesheets/**/*', ['rebuild']);
   gulp.watch('assets/javascript/**/*.js', ['optimize-js']);
   gulp.watch('assets/images/**/*', ['optimize-images']);
-  gulp.watch(['*.html', '*.md', '_layouts/*.html', '_includes/*.html', '_posts/*'], ['rebuild']);
+  gulp.watch(['*.html', '*.md', '_layouts/**/*.html', '_includes/**/*.html', '_posts/*'], ['rebuild']);
 });
 
 gulp.task('push', function (callback) {
@@ -146,11 +145,13 @@ gulp.task('push', function (callback) {
     .pipe(ghPages());
 });
 
-// Fully build and deploy Jekyll site
+
+// Fully build and deploy Jekyll site to GitHub pages
 gulp.task('deploy', function() {
   runSequence('build', 'push', 'cleanup-gh-pages-cache');
 });
 
+// Fully build and deploy Jekyll site on a local server
 gulp.task('default', function (callback) {
   runSequence(
     'browser-sync',

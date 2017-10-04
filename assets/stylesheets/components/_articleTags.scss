@@ -1,0 +1,14 @@
+.article-tag {
+  display: inline-block;
+  padding: 4px 8px;
+  margin: 5px;
+  background-color: $white;
+  border: 1px solid $gray-800;;
+  color: $gray-800;
+  text-decoration: none;
+  font-size: $font-size-sm;
+  &:hover {
+    color: $color-super-mega-beautiful;
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,31 @@
+<!-- Header of an article -->
+<header class="article-header" id="articleHeader" style="background-image: url(
+      {% if page.image %}
+      {{ "/assets/images/" | prepend: site.baseurl | append : page.image}}
+      {% else %}
+      {{ "/assets/images/" | prepend: site.baseurl | append : site.default-cover-image}}
+      {% endif %}
+      )">
+  <!-- Container -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="article-heading">
+          <h1>{{page.title}}</h1>
+          {% if page.subtitle %}
+          <h2>{{page.subtitle}}</h2>
+          {% endif %}
+          <div class="article-meta">
+            <span>
+                Written with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="{{site.baseurl}}/about">{{ site.author }}</a>
+                  on {{ page.date | date_to_long_string }}&nbsp;&nbsp;&nbsp;—&nbsp;
+                  {% capture words %}{{ page.content | number_of_words }}{% endcapture %}{% unless words contains "-" %}{{ words | plus: 250 | divided_by: 250 | append: " min read" }}{% endunless %}
+              </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End container -->
+</header>
+<!-- End header of an article -->

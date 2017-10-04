@@ -1,0 +1,71 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of an article page.
+// -----------------------------------------------------------------------------
+
+// @include media-breakpoint-up(xs) { ... }
+// @include media-breakpoint-up(sm) { ... }
+// @include media-breakpoint-up(md) { ... }
+// @include media-breakpoint-up(lg) { ... }
+// @include media-breakpoint-up(xl) { ... }
+
+.article-header {
+  position: relative;
+  background: no-repeat center center;
+  background-attachment: scroll;
+  background-size: cover;
+
+  color: $white;
+
+  margin-bottom: 64px;
+}
+
+.article-heading {
+  padding-top: 200px;
+  padding-bottom: 150px;
+
+  font-family: $font-family-sans-serif;
+
+  h1 {
+    font-size: $h1-font-size;
+    font-weight: $font-weight-bold;
+    
+    @include media-breakpoint-up(lg) {
+      font-size: 1.5 * $h1-font-size;
+    }
+  }
+
+  h2 {
+    font-size: $h2-font-size;
+    font-weight: $font-weight-normal;
+    line-height: $headings-line-height;
+    margin-top: 10px;
+    margin-bottom: 30px;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 1.2 * $h2-font-size;
+      margin-top: 20px;
+      margin-bottom: 60px;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
+}
+
+.article-meta {
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  line-height: $headings-line-height;
+  font-family: $font-family-serif;
+  font-style: italic;
+
+  a {
+    color: $white;
+  }
+  
+  @include media-breakpoint-up(lg) {
+    font-size: 1.1 * $font-size-base;
+  }
+}
