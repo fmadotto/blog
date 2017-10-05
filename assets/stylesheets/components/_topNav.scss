@@ -25,6 +25,10 @@
 
   .navbar-brand {
     font-size: $font-size-lg;
+    
+    @include media-breakpoint-down(sm) {
+      padding-left: 0px;
+    }
   }
 
   .navbar-toggler {
@@ -106,6 +110,10 @@
 
   .navbar-brand {
     font-size: $font-size-lg;
+    
+    @include media-breakpoint-down(sm) {
+      padding-left: 0px;
+    }
   }
 
   .navbar-toggler {
