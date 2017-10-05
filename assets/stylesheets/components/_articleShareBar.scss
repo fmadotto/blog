@@ -1,49 +1,7 @@
 /* - - - - - - - - - - Share bar styles - - - - - - - - - - */
 
-.share-button {
-  display: inline-block;
-  background-color: $white;
-  border: 1px solid $gray-800;
-  padding: 4px 8px;
-  margin: 5px;
-  font-size: $font-size-sm;
-  color: $gray-800;
+@import 'shareBarButtons';
 
-  a,
-  a:hover {
-    text-decoration: none;
-  }
-}
-
-.share-buttons {
-
-  .fa-facebook-official {
-    &:hover {
-      color: #3b5998;
-    }
-  }
-
-  .fa-twitter {
-    &:hover {
-      color: #55acee;
-    }
-  }
-
-  .fa-reddit-alien {
-    &:hover {
-      color: #ff4500;
-    }
-  }
-
-  .fa-linkedin {
-    &:hover {
-      color: #007bb5;
-    }
-  }
-
-  .fa-envelope {
-    &:hover {
-      color: #444444;
-    }
-  }
+.article-share-bar {
+  text-align: right;
 }

@@ -1,14 +1,21 @@
+.article-tags {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
 .article-tag {
   display: inline-block;
   padding: 4px 8px;
-  margin: 5px;
+  margin-top: 5px;
+  margin-right: 5px;
   background-color: $white;
-  border: 1px solid $gray-800;;
+  border: 1px solid $gray-800;
   color: $gray-800;
   text-decoration: none;
   font-size: $font-size-sm;
   &:hover {
     color: $color-super-mega-beautiful;
+    border-color: $color-super-mega-beautiful;
     text-decoration: none;
   }
 }
