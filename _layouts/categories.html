@@ -10,7 +10,7 @@
     <div class="container">
       
       {% for category in site.categories %}
-        <a href="#{{category | first | slugize}}">{{ category | first }}</a>
+        <a href="#{{category | first | slugize}}"><i class="fa fa-tag" aria-hidden="true"></i> {{ category | first }}</a>
       {% endfor %}
       
         
