@@ -1,4 +1,4 @@
-#topNav {
+#articleTopNav {
   position: fixed;
   top: 0px;
 
@@ -19,7 +19,7 @@
     
     &:focus,
     &:hover {
-      color: $gray-800;
+      color: $gray-900;
     }
   }
 
@@ -31,7 +31,7 @@
     border-color: $white;
     &:focus,
     &:hover {
-      border-color: $gray-800;
+      border-color: $gray-900;
     }
   }
   
@@ -46,11 +46,11 @@
   &.is-not-at-the-top {
     transform: translate3d(0, -100%, 0);
     
-    background-color: $white;
+    background-color: rgba($white, 0.95);
     border-bottom: 1px solid $gray-400;
 
     .navbar-toggler {
-      border-color: $gray-800;
+      border-color: $gray-700;
     }
 
     .navbar-brand,
@@ -58,10 +58,10 @@
     .navbar-nav
       > li.nav-item
         > a {
-      color: $gray-800;
+      color: $gray-700;
       &:focus,
       &:hover {
-        color: $color-super-mega-beautiful;
+        color: $gray-900;
       }
     }
   }
@@ -74,7 +74,81 @@
   &:not(.is-not-at-the-top) {
     &:focus,
     &:hover {
-      background-color: rgba($gray-800, 0.5);
+      background-color: rgba($gray-600, 0.5);
     }
+  }
+}
+
+#homeTopNav {
+  position: fixed;
+  top: 0px;
+
+  border-bottom: 1px solid transparent;
+
+  transition: all 0.5s;
+
+  .navbar-brand,
+  .navbar-toggler,
+  .navbar-nav
+    > li.nav-item
+      > a {
+    padding: 15px 20px;
+
+    font-family: $font-family-sans-serif;
+    font-weight: $font-weight-bold;
+    color: $gray-700;
+    
+    &:focus,
+    &:hover {
+      color: $gray-900;
+    }
+  }
+
+  .navbar-brand {
+    font-size: $font-size-lg;
+  }
+
+  .navbar-toggler {
+    border-color: $white;
+    &:focus,
+    &:hover {
+      border-color: $gray-900;
+    }
+  }
+  
+  .navbar-toggler,
+  .navbar-nav
+  > li.nav-item
+  > a {
+    text-transform: uppercase;
+    font-size: $font-size-sm;
+  }
+
+  &.is-not-at-the-top {
+    transform: translate3d(0, -100%, 0);
+    
+    background-color: rgba($white, 0.95);
+    border-bottom: 1px solid $gray-400;
+
+    .navbar-toggler {
+      border-color: $gray-700;
+    }
+
+    .navbar-brand,
+    .navbar-toggler,
+    .navbar-nav
+      > li.nav-item
+        > a {
+      color: $gray-700;
+      &:focus,
+      &:hover {
+        color: $gray-900;
+      }
+    }
+  }
+
+  &.is-visible {
+    /* if the user changes the scrolling direction, we show the header */
+    transform: translate3d(0, 0, 0);
   }
 }

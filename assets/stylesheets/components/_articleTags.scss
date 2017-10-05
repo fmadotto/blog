@@ -9,13 +9,13 @@
   margin-top: 5px;
   margin-right: 5px;
   background-color: $white;
-  border: 1px solid $gray-800;
-  color: $gray-800;
+  border: 1px solid $gray-600;
+  color: $gray-600;
   text-decoration: none;
   font-size: $font-size-sm;
   &:hover {
-    color: $color-super-mega-beautiful;
-    border-color: $color-super-mega-beautiful;
+    color: $gray-900;
+    border-color: $gray-900;
     text-decoration: none;
   }
 }

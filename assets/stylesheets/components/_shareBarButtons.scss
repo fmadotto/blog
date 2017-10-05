@@ -18,30 +18,35 @@
   .fa-facebook-official {
     &:hover {
       color: #3b5998;
+      text-decoration: none;
     }
   }
 
   .fa-twitter {
     &:hover {
       color: #55acee;
+      text-decoration: none;
     }
   }
 
   .fa-reddit-alien {
     &:hover {
       color: #ff4500;
+      text-decoration: none;
     }
   }
 
   .fa-linkedin {
     &:hover {
       color: #007bb5;
+      text-decoration: none;
     }
   }
 
   .fa-envelope {
     &:hover {
       color: $gray-900;
+      text-decoration: none;
     }
   }
 }

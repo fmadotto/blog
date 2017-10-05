@@ -1,6 +1,6 @@
 ---
 published: true
-layout: post
+layout: article
 title: Second post
 date: '2017-09-29 16:44:00 +0200'
 description: 'Second post :)'
@@ -9,6 +9,7 @@ categories:
   - Ciccio
   - Pasticcio
   - Lul
+  - Hawaii
 ---
 ## A New Post
 

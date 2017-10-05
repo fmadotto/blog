@@ -4,7 +4,7 @@
 
     var $window = $(window),
       $articleHeader = $('.article-header'),
-      $topNav = $("#topNav");
+      $topNav = $(".navbar");
 
     var top = $window.scrollTop();
 

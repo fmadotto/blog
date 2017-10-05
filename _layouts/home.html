@@ -5,13 +5,14 @@
 {% include head.html %}
 
 <body>
-  {% include topNav.html %}
+  {% include homeTopNav.html %}
   <div class="home-cards" id="homeCards">
     <div class="container">
-        <h1>Latest posts</h1>
-
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="category-header">
+              <h1>Latest posts</h1>
+            </div>
             <div class="card-deck">
               {% for post in site.posts limit:1 %}
               <div class="card">
@@ -63,14 +64,21 @@
 
       {% for category in site.categories %}
         {% capture category_name %}{{ category | first }}{% endcapture %}
-        <a name="#{{ category_name | slugize }}"></a>
-        <h1>{{ category_name }}</h1>
-        <a href="{{site.baseurl}}/categories/#{{category | first | slugize}}">More</a>
+        
         {% capture category_post_count %}{{ site.categories[category_name] | size }}{% endcapture %}
         {% capture difference %}{{ category_post_count | minus:6 }}{% endcapture %}
         
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="category-header clearfix">
+              <a name="{{ category_name | slugize }}"></a>
+              <div class="category-title">
+                <h1>{{category_name}}</h1>
+              </div>
+              <div class="category-more">
+                <a href="{{site.baseurl}}/categories/#{{category | first | slugize}}">More&nbsp;&nbsp;<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+              </div>
+            </div>
             {% if difference contains '-' %}
               {% capture first_row_count %}{{ category_post_count | modulo:3 }}{% endcapture %}
               {% capture second_row_count %}{{ category_post_count | minus:first_row_count }}{% endcapture %}

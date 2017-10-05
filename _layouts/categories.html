@@ -5,24 +5,33 @@
 {% include head.html %}
 
 <body>
-  {% include topNav.html %}
+  {% include homeTopNav.html %}
   <div class="home-cards" id="homeCards">
     <div class="container">
-      
-      {% for category in site.categories %}
-        <a href="#{{category | first | slugize}}"><i class="fa fa-tag" aria-hidden="true"></i> {{ category | first }}</a>
-      {% endfor %}
-      
+
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="article-tags" style="text-align:center;">
+            {% for category in site.categories %}
+              <a href="#{{category | first | slugize}}" class="article-tag"><i class="fa fa-tag" aria-hidden="true"></i> {{ category | first }}</a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
         
       {% for category in site.categories %}
         {% capture category_name %}{{ category | first }}{% endcapture %}
         {% capture category_post_count %}{{ site.categories[category_name] | size }}{% endcapture %}
         
-        <a name="{{ category_name | slugize }}" href="#"></a>
-        <h1>{{ category_name }} ({{ category_post_count }})</h1>
-        
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
+              <div class="category-header clearfix">
+                <a name="{{ category_name | slugize }}"></a>
+                <div class="category-title">
+                  <h1>{{category_name}} ({{ category_post_count }})</h1>
+                </div>
+              </div>
+
               {% capture first_row_count %}{{ category_post_count | modulo:3 }}{% endcapture %}
               
               {% assign post_offset = 0 %}
