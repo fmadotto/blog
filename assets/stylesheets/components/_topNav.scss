@@ -32,10 +32,10 @@
   }
 
   .navbar-toggler {
-    border-color: $white;
+    border: 1px solid $white;
     &:focus,
     &:hover {
-      border-color: $gray-900;
+      border: 1px solid $gray-900;
     }
   }
   
@@ -117,10 +117,10 @@
   }
 
   .navbar-toggler {
-    border-color: $white;
+    border: 1px solid $gray-700;
     &:focus,
     &:hover {
-      border-color: $gray-900;
+      border: 1px solid $gray-900;
     }
   }
   
@@ -139,7 +139,7 @@
     border-bottom: 1px solid $gray-400;
 
     .navbar-toggler {
-      border-color: $gray-700;
+      border: 1px solid $gray-700;
     }
 
     .navbar-brand,
