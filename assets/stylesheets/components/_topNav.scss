@@ -1,4 +1,4 @@
-#articleTopNav {
+#topNav {
   position: fixed;
   top: 0px;
 
@@ -14,7 +14,7 @@
     padding: 15px 20px;
 
     font-family: $font-family-sans-serif;
-    font-weight: 800;
+    font-weight: $font-weight-bold;
     color: $white;
     
     &:focus,
@@ -69,5 +69,12 @@
   &.is-visible {
     /* if the user changes the scrolling direction, we show the header */
     transform: translate3d(0, 0, 0);
+  }
+
+  &:not(.is-not-at-the-top) {
+    &:focus,
+    &:hover {
+      background-color: rgba($gray-800, 0.5);
+    }
   }
 }

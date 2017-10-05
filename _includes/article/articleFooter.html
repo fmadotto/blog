@@ -2,27 +2,35 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-        {% include share_bar.html %}
-
         <div class="article-tags">
           {% for tag in page.tags %}
-          <a href="{{site.baseurl}}/tags#{{tag}}" class="article-tag">{{ tag }}</a>
+          <a href="{{site.baseurl}}/tags#{{tag}}" class="article-tag">&#35;{{ tag }}</a>
           {% endfor %}
         </div>
 
-        <div class="page-writtenby">
-          <h1>Written by</h1>
-          <div class="page-author">
+        {% include article/articleShareBar.html %}
+
+        <div class="article-written-by">
+
+          <div class="article-author clearfix">
             {% if site.author-image %}
-            <div class="page-author-image" style="background-image: url({{ " /assets/images/
-              " | prepend: site.baseurl | append : site.author-image}})"></div>
+            <div class="article-author-image">
+              <a href="{{site.baseurl}}/about/">
+                <img src="{{ "/assets/images/" | prepend: site.baseurl | append : site.author-image-icon}}" alt="">
+              </a>
+            </div>
             {% endif %}
-            <h2>{{ site.author }}</h2>
-            <p>{{ site.about-author }}</p>
+            <div class="article-author-info">
+              <a href="{{site.baseurl}}/about/">
+                {{ site.author }}
+              </a>
+              <p>{{ site.about-author }}</p>
+            </div>
           </div>
         </div>
+
+        {% include disqus.html %}
       </div>
     </div>
   </div>
 </footer>
-{% include disqus.html %}

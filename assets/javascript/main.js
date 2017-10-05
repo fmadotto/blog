@@ -4,7 +4,7 @@
 
     var $window = $(window),
       $articleHeader = $('.article-header'),
-      $articleTopNav = $("#articleTopNav");
+      $topNav = $("#topNav");
 
     var top = $window.scrollTop();
 
@@ -22,38 +22,38 @@
           .css('opacity', 1 - Math.max(top / 350, 0));
         }  
 
-        // articleTopNav
+        // topNav
         // scrolling down
-        if (top > this.previousTop && top > $articleTopNav.height()) {
-          $articleTopNav
+        if (top > this.previousTop && top > $topNav.height()) {
+          $topNav
             .removeClass("is-visible")
             .addClass("is-not-at-the-top");
         }
         // scrolling up
-        else if (top < this.previousTop && top > $articleTopNav.height()) {
-          $articleTopNav
+        else if (top < this.previousTop && top > $topNav.height()) {
+          $topNav
             .addClass("is-visible");
         }
         // in the middle of the navbar
-        else if (top <= $articleTopNav.height()) {
-          $articleTopNav
+        else if (top <= $topNav.height()) {
+          $topNav
             .removeClass("is-not-at-the-top")
             .removeClass("is-visible");
         }
         this.previousTop = top;
       }
-            // // articleTopNav
+            // // topNav
             // if (top < this.previousTop) {
             //   //if scrolling up...
-            //   if (top > 0 && $articleTopNav.hasClass('is-not-at-the-top')) {
-            //     $articleTopNav.addClass('is-visible');
+            //   if (top > 0 && $topNav.hasClass('is-not-at-the-top')) {
+            //     $topNav.addClass('is-visible');
             //   } else {
-            //     $articleTopNav.removeClass('is-visible is-not-at-the-top');
+            //     $topNav.removeClass('is-visible is-not-at-the-top');
             //   }
             // } else if (top > this.previousTop) {
             //   //if scrolling down...
-            //   $articleTopNav.removeClass('is-visible');
-            //   if (top > $articleTopNav.height() && !$articleTopNav.hasClass('is-not-at-the-top')) $articleTopNav.addClass('is-not-at-the-top');
+            //   $topNav.removeClass('is-visible');
+            //   if (top > $topNav.height() && !$topNav.hasClass('is-not-at-the-top')) $topNav.addClass('is-not-at-the-top');
             // }
             // this.previousTop = top;
     });
