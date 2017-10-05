@@ -1,4 +1,4 @@
 ---
 layout: home
-title: About me
+title: Contact
 ---
