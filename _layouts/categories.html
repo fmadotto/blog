@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+{% include head.html %}
+
+<body>
+  {% include topNav.html %}
+  <div class="home-cards" id="homeCards">
+    <div class="container">
+      
+      {% for category in site.categories %}
+        <a href="#{{category | first | slugize}}">{{ category | first }}</a>
+      {% endfor %}
+      
+        
+      {% for category in site.categories %}
+        {% capture category_name %}{{ category | first }}{% endcapture %}
+        {% capture category_post_count %}{{ site.categories[category_name] | size }}{% endcapture %}
+        
+        <a name="{{ category_name | slugize }}" href="#"></a>
+        <h1>{{ category_name }} ({{ category_post_count }})</h1>
+        
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+              {% capture first_row_count %}{{ category_post_count | modulo:3 }}{% endcapture %}
+              
+              {% assign post_offset = 0 %}
+
+              {% capture rows_remainder %}{{ category_post_count | modulo:3 }}{% endcapture %}
+              {% capture rows_number %}{{ category_post_count | divided_by:3 | plus:rows_remainder }}{% endcapture %}
+
+              {% if first_row_count != '0' %}
+                <div class="card-deck">
+                  {% for post in site.categories[category_name] limit:first_row_count %}
+                  <div class="card">
+                    <a href="{{post.url | prepend: site.baseurl}}">
+                      <img class="card-img-top" src="/assets/images/i-rest.jpg" alt="Card image cap">
+                    </a>
+                    <div class="card-body">
+                      <a href="{{post.url | prepend: site.baseurl}}">
+                        <h4 class="card-title">{{ post.title }}</h4>
+                        <p class="card-text">{{ post.subtitle }}</p>
+                      </a>
+                    </div>
+                    <div class="card-footer">
+                      <a href="{{post.url | prepend: site.baseurl}}">
+                        <small class="text-muted">
+                          {{ post.date | date_to_string }}&nbsp;&nbsp;&nbsp;—&nbsp;</span>
+                          <span class="post-words">{% capture words %}{{ post.content | number_of_words }}{% endcapture %}{% unless words contains "-" %}{{ words | plus: 250 | divided_by: 250 | append: " min read" }}{% endunless %}</span>
+                        </small>
+                      </a>
+                    </div>
+                  </div>
+                  {% endfor %}
+                </div>
+                {% capture rows_number %}{{ rows_number | minus:1 }}{% endcapture %}
+                {% assign post_offset = first_row_count %}
+              {% endif %}
+              
+              {% for row in (1..rows_number) %}
+              <div class="card-deck">
+                  {% for post in site.categories[category_name] offset:post_offset limit:3 %}
+                  <div class="card">
+                    <a href="{{post.url | prepend: site.baseurl}}">
+                      <img class="card-img-top" src="/assets/images/i-rest.jpg" alt="Card image cap">
+                    </a>
+                    <div class="card-body">
+                      <a href="{{post.url | prepend: site.baseurl}}">
+                        <h4 class="card-title">{{ post.title }}</h4>
+                        <p class="card-text">{{ post.subtitle }}</p>
+                      </a>
+                    </div>
+                    <div class="card-footer">
+                      <a href="{{post.url | prepend: site.baseurl}}">
+                        <small class="text-muted">
+                          {{ post.date | date_to_string }}&nbsp;&nbsp;&nbsp;—&nbsp;</span>
+                          <span class="post-words">{% capture words %}{{ post.content | number_of_words }}{% endcapture %}{% unless words contains "-" %}{{ words | plus: 250 | divided_by: 250 | append: " min read" }}{% endunless %}</span>
+                        </small>
+                      </a>
+                    </div>
+                  </div>
+                  {% endfor %}
+                </div>
+                {% capture post_offset %}{{ post_offset | plus:3 }}{% endcapture %}
+                {% endfor %}
+            </div>
+          </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  {% include scripts.html %}
+
+</body>
+
+</html>

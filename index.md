@@ -1,3 +1,3 @@
 ---
-layout: home_page
+layout: home
 ---

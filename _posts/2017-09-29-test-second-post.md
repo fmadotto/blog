@@ -5,7 +5,7 @@ title: Second post
 date: '2017-09-29 16:44:00 +0200'
 description: 'Second post :)'
 image: i-rest.jpg
-tags:
+categories:
   - Ciccio
   - Pasticcio
   - Lul
