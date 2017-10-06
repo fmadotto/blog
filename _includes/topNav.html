@@ -1,7 +1,9 @@
 <!-- Container -->
 <div class="container">
   <!-- Branding -->
-  <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
+  <a class="navbar-brand" href="{{ site.baseurl }}/">
+  <img src="{{ "/assets/images/" | prepend: site.baseurl | append : site.blog-logo }}" alt="{{ site.title }} logo">
+  {{ site.title }}</a>
   <!-- End branding -->
   <!-- Mobile burger menu -->
   <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#topNavBar-links" aria-controls="topNavBar-links" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,8 +14,8 @@
   <div class="collapse navbar-collapse" id="topNavBar-links">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/">Home</a></li>
-      <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/about/">About</a></li>
-      <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/contact/">Contact</a></li>
+      <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/categories/">Categories</a></li>
+      <li class="nav-item"><a class="nav-link" href="http://www.federicomadotto.com" target="_blank">About</a></li>
     </ul>
   </div>
   <!-- End links -->

@@ -6,6 +6,11 @@
   border-bottom: 1px solid transparent;
   transition: all 0.5s;
 
+  .navbar-brand>img {
+    height: 60px;
+    padding-right: 16px;
+  }
+
   .navbar-brand,
   .navbar-toggler,
   .navbar-nav
@@ -14,7 +19,7 @@
     padding: 15px 20px;
 
     font-family: $font-family-sans-serif;
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight-normal;
     color: $white;
     
     &:focus,
@@ -91,6 +96,11 @@
 
   transition: all 0.5s;
 
+  .navbar-brand>img {
+    height: 60px;
+    padding-right: 16px;
+  }
+
   .navbar-brand,
   .navbar-toggler,
   .navbar-nav
@@ -99,7 +109,7 @@
     padding: 15px 20px;
 
     font-family: $font-family-sans-serif;
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight-normal;
     color: $gray-700;
     
     &:focus,

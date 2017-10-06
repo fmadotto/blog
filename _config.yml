@@ -1,9 +1,10 @@
-title: Cool blog name
-blog-logo: squarepic.jpg # blog logo
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+title: The Blockchap
+blog-logo: logo/blockchap.svg # blog logo
+description: > # this means to ignore newlines until the next field
+  The Blockchap writes about Blockchain technology.
+  You'll find articles related to Blockchain, Bitcoin, Ethereum, Hyperledger, cryptocurrencies in general, and of various levels of complexity, starting from the very basics to ICO reviews.
+  All that explained in a friendly way to help everyone understands the ever-expanding Blockchain universe.
+keywords: blockchain,blockchap,Federico,Madotto,blog,bitcoin,ethereum,hyperledger,eris,monax,crytocurrency,crypto,cryptocurrencies,ICO,review,analysis,consulting,cryptography,satoshi,nakamoto
 permalink: ':year/:month/:day/:slug/'
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://blog.federicomadotto.com" # the base hostname & protocol for your site, e.g. http://example.com
