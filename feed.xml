@@ -1,2 +1,60 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://blog.federicomadotto.com/feed.xml" rel="self" type="application/atom+xml" /><link href="http://blog.federicomadotto.com/" rel="alternate" type="text/html" /><updated>2017-10-10T09:32:37+02:00</updated><id>http://blog.federicomadotto.com/</id><title type="html">The Blockchap</title><subtitle>The Blockchap writes about Blockchain technology. You'll find articles related to Blockchain, Bitcoin, Ethereum, Hyperledger, cryptocurrencies in general, and of various levels of complexity, starting from the very basics to ICO reviews. All that explained in a friendly way to help everyone understands the ever-expanding Blockchain universe.
-</subtitle><author><name>Federico Madotto</name></author></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://blog.federicomadotto.com/feed.xml" rel="self" type="application/atom+xml" /><link href="http://blog.federicomadotto.com/" rel="alternate" type="text/html" /><updated>2017-10-10T23:03:05+02:00</updated><id>http://blog.federicomadotto.com/</id><title type="html">The Blockchap</title><subtitle>The Blockchap writes about Blockchain technology. You'll find articles related to Blockchain, Bitcoin, Ethereum, Hyperledger, cryptocurrencies in general, and of various levels of complexity, starting from the very basics to ICO reviews. All that explained in a friendly way to help everyone understands the ever-expanding Blockchain universe.
+</subtitle><author><name>Federico Madotto</name></author><entry><title type="html">Not every new journey begins on a Monday.</title><link href="http://blog.federicomadotto.com/2017/10/10/not-every-new-journey-begins-on-a-monday/" rel="alternate" type="text/html" title="Not every new journey begins on a Monday." /><published>2017-10-10T00:00:00+02:00</published><updated>2017-10-10T00:00:00+02:00</updated><id>http://blog.federicomadotto.com/2017/10/10/not-every-new-journey-begins-on-a-Monday.</id><content type="html" xml:base="http://blog.federicomadotto.com/2017/10/10/not-every-new-journey-begins-on-a-monday/">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;As a hopelessly curious person, I’m an avid reader.
+Maybe not an avid “real book” reader, but every day and every hour or two I regularly stop for around ten minutes and let my mind absorb some new, fresh ideas from every appealing (but well-respected) source I can find.
+I don’t really care much about their topic. I read the news, I learn about technology, entrepreneurship, marketing, cultures, sexism (shoutouts to my girlfriend, who carefully picks and forward to my reading list some essays on this)… and yes, I read a lot about Blockchain technology.&lt;/p&gt;
+
+&lt;p&gt;When choosing my reading material, I usually prefer to avoid social networks and shun pieces written on websites that have more ads than actual content. But when I don’t have a particular topic in mind, I usually get inspired by feeds such as &lt;a href=&quot;https://www.reddit.com/&quot;&gt;Reddit&lt;/a&gt; and &lt;a href=&quot;http://www.medium.com&quot;&gt;Medium&lt;/a&gt;. As an IEEE member, I also enjoy cherry-picking some scientific paper from the &lt;a href=&quot;http://ieeexplore.ieee.org/&quot;&gt;IEEE Xplore Digital Library&lt;/a&gt; and read about some fresh new discovery in the IT and electronics fields.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/20171010/books-cellphone.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Among these reads, I often find stories of entrepreneurs (famous or new ones alike) and their habits. These posts usually go viral because of people who think that if they adapt their lifestyle to mimic the successful people’s one, their currently-owned business will skyrocket with little-to-no effort. (SPOILER: don’t trust or pay for “magic checklists” that promise they will make you successful, it just &lt;strong&gt;doesn’t work&lt;/strong&gt;).
+Surely some of these tips will maybe help someone find the motivation to become more productive, better organized, or conduct a healthier lifestyle.
+But the most common and—in my opinion—the best advice is &lt;strong&gt;get started now&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;start-today&quot;&gt;Start today!&lt;/h1&gt;
+&lt;p&gt;This is why I’m writing this article today, a Tuesday of October. Not a memorable date, not the beginning of a week, no excuses. To be entirely honest, I could have written this post one week ago, but I decided to set up my personal blog on my domain so that I can be entirely independent from (and—therefore— unaffected by) the possible future policy changes of—say—Medium or Wordpress.com.
+I will maybe write something more on why I chose to not rely on a social blogging platform: let me know if you’re interested in the comments and subscribe to my mailing list to receive some non-intrusive, free updates on the things I write!&lt;/p&gt;
+
+&lt;p&gt;[MAILINGLIST]&lt;/p&gt;
+
+&lt;h1 id=&quot;ok-but-why-this-blog&quot;&gt;Ok, but why this blog?&lt;/h1&gt;
+&lt;p&gt;But why did I start this blog? Well:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;I happen to like writing&lt;/strong&gt; (I keep a paper journal in which I log relevant events, in which I keep my checklists or on which I just let the ink flow, guided by my stream of thought). However, I always kept my notes private. As a Blockchain enthusiast, I take notes almost daily on Blockchain-related topics when reading whitepapers or technical essays. &lt;a href=&quot;https://www.fiverr.com/federicomadotto/explain-and-summarize-any-blockchain-white-paper&quot;&gt;Sometimes people even ask me to explain these cryptic whitepapers for them&lt;/a&gt;, but I’ve never publicly shared my knowledge on the Internet.
+  &lt;img src=&quot;/assets/images/20171010/journal.jpg&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Blockchain is a buzzword, and people are confused about it&lt;/strong&gt;. I regularly interact (at my workplace, on the phone, on the Internet) with people who either have never heard the &lt;em&gt;B word&lt;/em&gt;, or they’ve heard it somewhere but—in fact— they know nothing about it, or—worse—they’ve read some misleading information, and they think they know everything about it. This last category is ubiquitous amongst business people, and it’s hazardous (for them) if they decide to invest in it.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;I have some experience in this field, and I like to help people&lt;/strong&gt;. I wrote my master thesis on the applicability of Blockchain technology for business applications, and I help colleagues, family and friends to understand what Blockchain is, why it is relevant, and why they should &lt;em&gt;not&lt;/em&gt; use it for their next project. Sadly, you’ve read it correctly. The public is often overexcited about new technologies, and Blockchain is no exception. I am not a Blockchain evangelist. I would consider myself as a conscientious Blockchain evangelist.
+  &lt;img src=&quot;/assets/images/20171010/research.jpg&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;[BONUS POINT] &lt;strong&gt;I’ve been recently asked to give some lectures to high school students on the topic&lt;/strong&gt;. I might as well prepare some material for them and share it with the rest of the world.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;what-will-you-write-about&quot;&gt;What will you write about?&lt;/h1&gt;
+&lt;p&gt;As in my description at the bottom of every post, &lt;em&gt;“I enjoy reading about cool and challenging topics and write about them in simple terms.”&lt;/em&gt; In practice, this means that I will write interesting things, mainly about Blockchain technology, in a way that will be understandable by everyone who might be interested in the topic, starting from the very foundations of the technology, to why you should invest in an ICO.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Unsure about what an ICO is? Subscribe to my newsletter to stay updated on what I write, and write a comment if you want me to cover a particular topic.&lt;/p&gt;
+
+  &lt;p&gt;&lt;em&gt;I am just starting, so that will significantly help me deliver better content. And it costs you nothing.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;[MAILINGLIST]&lt;/p&gt;
+
+&lt;h1 id=&quot;why-the-blockchap&quot;&gt;Why &lt;em&gt;“The Blockchap”&lt;/em&gt;?&lt;/h1&gt;
+
+&lt;p&gt;According to the illustrious &lt;a href=&quot;http://www.urbandictionary.com/define.php?term=Chap&quot;&gt;Urban Dictionary&lt;/a&gt;, a chap is:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/20171010/chap-def.png&quot; alt=&quot;&amp;quot;chap&amp;quot; = A true gentleman. (according to urbandictionary.com)&quot; title=&quot;chap = A true gentleman.&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Which is &lt;em&gt;basically&lt;/em&gt; my description. I also happen to write about blockchain technology, so…&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Blockchain ⛓📦 + chap 🕴 = 🌟💡🌟 Blockchap! 🌟💡🌟&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;…and I’m an engineer, so please don’t judge me for my poor creative choices.&lt;/p&gt;
+
+&lt;p&gt;Jokes aside, if you’re still here, thank you very much for reading this article. More content will come very soon: don’t forget the mailing list! 😉&lt;/p&gt;
+
+&lt;p&gt;[MAILINGLIST]&lt;/p&gt;</content><author><name>Federico Madotto</name></author><summary type="html">Introduction As a hopelessly curious person, I’m an avid reader. Maybe not an avid “real book” reader, but every day and every hour or two I regularly stop for around ten minutes and let my mind absorb some new, fresh ideas from every appealing (but well-respected) source I can find. I don’t really care much about their topic. I read the news, I learn about technology, entrepreneurship, marketing, cultures, sexism (shoutouts to my girlfriend, who carefully picks and forward to my reading list some essays on this)… and yes, I read a lot about Blockchain technology.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://blog.federicomadotto.com/20171010/ipad-journal-coffee.jpeg" /></entry></feed>
