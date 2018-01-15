@@ -1,5 +1,187 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://blog.federicomadotto.com/feed.xml" rel="self" type="application/atom+xml" /><link href="http://blog.federicomadotto.com/" rel="alternate" type="text/html" /><updated>2017-10-11T22:13:01+02:00</updated><id>http://blog.federicomadotto.com/</id><title type="html">The Blockchap</title><subtitle>The Blockchap writes about Blockchain technology. You'll find articles related to Blockchain, Bitcoin, Ethereum, Hyperledger, cryptocurrencies in general, and of various levels of complexity, starting from the very basics to ICO reviews. All that explained in a friendly way to help everyone understands the ever-expanding Blockchain universe.
-</subtitle><author><name>Federico Madotto</name></author><entry><title type="html">Not every new journey begins on a Monday.</title><link href="http://blog.federicomadotto.com/2017/10/10/not-every-new-journey-begins-on-a-monday/" rel="alternate" type="text/html" title="Not every new journey begins on a Monday." /><published>2017-10-10T00:00:00+02:00</published><updated>2017-10-10T00:00:00+02:00</updated><id>http://blog.federicomadotto.com/2017/10/10/not-every-new-journey-begins-on-a-Monday.</id><content type="html" xml:base="http://blog.federicomadotto.com/2017/10/10/not-every-new-journey-begins-on-a-monday/">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://blog.federicomadotto.com/feed.xml" rel="self" type="application/atom+xml" /><link href="http://blog.federicomadotto.com/" rel="alternate" type="text/html" /><updated>2018-01-15T10:40:12+01:00</updated><id>http://blog.federicomadotto.com/</id><title type="html">The Blockchap</title><subtitle>The Blockchap writes about Blockchain technology. You'll find articles related to Blockchain, Bitcoin, Ethereum, Hyperledger, cryptocurrencies in general, and of various levels of complexity, starting from the very basics to ICO reviews. All that explained in a friendly way to help everyone understands the ever-expanding Blockchain universe.
+</subtitle><author><name>Federico Madotto</name></author><entry><title type="html">Can you trust what you’re reading? A practical guide on how to not get tricked on the Internet by using hashes.</title><link href="http://blog.federicomadotto.com/2017/10/11/hash/" rel="alternate" type="text/html" title="Can you trust what you're reading? A practical guide on how to not get tricked on the Internet by using hashes." /><published>2017-10-11T00:00:00+02:00</published><updated>2017-10-11T00:00:00+02:00</updated><id>http://blog.federicomadotto.com/2017/10/11/hash</id><content type="html" xml:base="http://blog.federicomadotto.com/2017/10/11/hash/">&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/sha256.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;/assets/javascript/hash.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;If you’re reading this article, you are probably not questioning the fact that what you read is &lt;em&gt;precisely&lt;/em&gt; what I intended to publish.
+Maybe you’re aware that the font face, the colors, the layout of this page appear different on distinct screens, devices or browsers, but you trust that &lt;em&gt;the content&lt;/em&gt; of this blog post is exactly the same of what I published. What can go wrong with that?&lt;/p&gt;
+
+&lt;p&gt;Let me elaborate. &lt;strong&gt;Do you see the difference between the following two strings?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Hello, world!&lt;/li&gt;
+  &lt;li&gt;Hello,‌ w‌o‌rld!&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;They both say “Hello, world!”, but are they &lt;em&gt;really&lt;/em&gt; identical? &lt;strong&gt;Read on, and we’ll verify it together, using real-world tools!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Now, what if you’re reading this article on a browser that you downloaded—or updated—from the Internet. It seems to be working perfectly, and it looks like everyone else’s. Just like how the two strings above &lt;em&gt;look&lt;/em&gt; alike. But &lt;em&gt;are you sure&lt;/em&gt; that the application you’re running is the one Google, Mozilla, Microsoft, Apple, Opera Software distributed? What if you clicked on a fake download button by mistake, on a website that looked exactly the same as the original download page? &lt;a href=&quot;https://www.theguardian.com/technology/2017/oct/10/pornhub-adult-site-users-targeted-malvertising-attack-malware-kovcoregs-kovter&quot;&gt;What if you’re now helping someone spreading a nasty malware because of that&lt;/a&gt;?&lt;/p&gt;
+
+&lt;p&gt;These occurrences may seem rare, but &lt;a href=&quot;https://www.forbes.com/sites/leemathews/2017/02/22/ransomware-attack-pushes-fake-font-update-on-google-chrome-users/#3b8c80c366a2&quot;&gt;this&lt;/a&gt;-&lt;a href=&quot;https://betanews.com/2017/10/10/fake-adblock-plus-extension/&quot;&gt;stuff&lt;/a&gt;-&lt;a href=&quot;https://www.engadget.com/2017/09/18/piriform-ccleaner-hacked-malware-downloads/&quot;&gt;happens&lt;/a&gt;-&lt;a href=&quot;https://www.pcworld.com/article/3194366/security/sneaky-gmail-phishing-attack-fools-with-fake-google-docs-app.html&quot;&gt;all&lt;/a&gt;-&lt;a href=&quot;https://www.bleepingcomputer.com/news/security/hacker-hides-backdoor-inside-fake-wordpress-security-plugin/&quot;&gt;the&lt;/a&gt;-&lt;a href=&quot;https://www.bleepingcomputer.com/news/security/scammer-uses-fake-tor-browser-to-lure-victims-to-supposed-dark-web-marketplace/&quot;&gt;time&lt;/a&gt; (yes, all these links are from less than one year ago).&lt;/p&gt;
+
+&lt;p&gt;Fortunately enough, there &lt;em&gt;is&lt;/em&gt; a way to protect yourself from these types of tricks, so let’s dive into our first, elementary lesson on hashes!&lt;/p&gt;
+
+&lt;h1 id=&quot;part-1-a-bit-of-theory&quot;&gt;Part 1: a bit of theory!&lt;/h1&gt;
+&lt;p&gt;If you’re a practical person and you already know something about hashes, go directly to the second part of this tutorial. Otherwise, let’s start with a brief explanation of what hashes are and what they’re used for.&lt;/p&gt;
+
+&lt;h2 id=&quot;whats-a-hash&quot;&gt;What’s a hash?&lt;/h2&gt;
+&lt;p&gt;A hash is nothing more than a number, really. A number that has some fascinating properties.&lt;/p&gt;
+
+&lt;p&gt;Let’s imagine an unusual hand-held calculator that has a numeric keypad, a display, and a fancy, red button on which is printed “H.”&lt;/p&gt;
+
+&lt;p&gt;I have developed a virtual version of it so you can try it. Here you go:&lt;/p&gt;
+
+&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;row justify-content-center&quot;&gt;
+    &lt;div class=&quot;col-9 col-sm-6&quot;&gt;
+      &lt;div id=&quot;calculator&quot;&gt;
+        &lt;div class=&quot;calculator-row clearfix&quot;&gt;
+          &lt;div class=&quot;calculator-display&quot;&gt;
+            &lt;p id=&quot;calculator-display-content&quot;&gt;&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;calculator-row clearfix&quot;&gt;
+          &lt;span class=&quot;number&quot;&gt;7&lt;/span&gt;
+          &lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;
+          &lt;span class=&quot;number&quot;&gt;9&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;calculator-row clearfix&quot;&gt;
+          &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;
+          &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;
+          &lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;calculator-row clearfix&quot;&gt;
+          &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;
+          &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;
+          &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;calculator-row clearfix&quot;&gt;
+          &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;
+          &lt;span id=&quot;clear&quot;&gt;C&lt;/span&gt;
+          &lt;span id=&quot;hash&quot;&gt;H&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;With this calculator, you can input any number you want, and then press the &lt;em&gt;H&lt;/em&gt; button to see the result on its display. &lt;strong&gt;This result is what we’re going to call a hash&lt;/strong&gt;. (You can clear the output by pressing &lt;em&gt;C&lt;/em&gt;.)&lt;/p&gt;
+
+&lt;p&gt;By playing with this simple calculator, &lt;strong&gt;you’ll be able to notice a few properties&lt;/strong&gt;:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;the resulting number—the hash—is always less than a pre-defined number (for this particular calculator you’ll always get hashes which are less than 100,000), whatever the input;&lt;/li&gt;
+  &lt;li&gt;if you input the same number multiple times, you’ll always get the same hash as a result;&lt;/li&gt;
+  &lt;li&gt;if you slightly modify the input, the resulting hash will be entirely different (e.g., if you try to input two consecutive numbers, the two results you get are totally uncorrelated);&lt;/li&gt;
+  &lt;li&gt;the operations that the device performs when pressing &lt;em&gt;H&lt;/em&gt; are not a secret, and they can be safely shared with everyone.
+&lt;em&gt;(If you’re curious and want to know what my calculator does, leave a comment below!)&lt;/em&gt;
+However, even with this knowledge, it is impossible (here I really should say &lt;em&gt;infeasible&lt;/em&gt;, but let’s keep things simple) to recover the original number that was passed as input, starting from the resulting hash. &lt;strong&gt;Once you press H, there’s no way back to the original input&lt;/strong&gt;. If—for some reason—you want to share one of the hashes you computed, no one will never be able to retrieve the original number that you input.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Ok, cool—I guess. But what do we do with it? How is this useful?&lt;/p&gt;
+
+&lt;h2 id=&quot;what-exactly-can-i-do-with-a-hash&quot;&gt;What exactly can I do with a hash?&lt;/h2&gt;
+&lt;p&gt;You’re probably aware that computers (and cell phones too!) are devices that can only process long sequences of &lt;em&gt;1s&lt;/em&gt; and &lt;em&gt;0s&lt;/em&gt;. Everything that you see on your screen was produced after having read &lt;em&gt;a lot&lt;/em&gt; of boring ones and zeroes.&lt;/p&gt;
+
+&lt;p&gt;How is this relevant? Well, it turns out that since everything (text, pictures, videos, spreadsheets…) is a long sequence of 1s and 0s, all information stored on a computer is… well, a number! Yes: you can represent the entire content of your hard drive with just one, big number. Heck, you could even represent the whole information available on the Internet with one, &lt;em&gt;huge&lt;/em&gt; number made only of 1s and 0s!&lt;/p&gt;
+
+&lt;p&gt;In practice, this means that we can take any piece of information (say, a file, or a piece of text), get its “equivalent number,” and put it in our calculator. We would then get its hash.
+Now we know (property #2 in the previous paragraph) that for the same piece of information passed as input, the calculator will return the very same hash: this is an &lt;em&gt;extremely&lt;/em&gt; useful property. Indeed, if you have two identical files, they will have the same numeric representation; hence they’ll lead to the same hash. This means that if—unbeknown to the owner—a malicious person modifies one of two (supposedly identical) files, &lt;strong&gt;you’ll be able to tell if they are different by computing their hashes and noticing if they are equal or not&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Let’s imagine an even more useful (and closer to reality) scenario.&lt;/p&gt;
+
+&lt;p&gt;Let’s say you want to download the &lt;a href=&quot;https://www.torproject.org/download/download-easy.html.en&quot;&gt;current version (7.0.10) of Tor&lt;/a&gt;, a browser that helps people to improve their privacy and security while browsing the Internet. After having read all the previously-linked articles about the thousands of computers infected with malware, you want to be careful with this download. How could you make sure that you are not downloading a fake, &lt;strong&gt;dangerous installer that someone tricked you to download instead&lt;/strong&gt;? There are many solutions, and some of them are already automatically performed by your Operating System. One other—somewhat more advanced—option, as you can guess, is using hashes!
+&lt;strong&gt;The process to verify the integrity of a document using hashes is simple, and it always involves these three steps&lt;/strong&gt;:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Obtaining a file from a channel (e.g., a download page, a USB key, an email attachment);&lt;/li&gt;
+  &lt;li&gt;Obtaining the hash that the author of the file computed, possibly from another, &lt;em&gt;secure&lt;/em&gt; channel (e.g., a web page accessed with a secure protocol like &lt;em&gt;https&lt;/em&gt;, a hand-written letter shipped to your home, a phone call, etc.);&lt;/li&gt;
+  &lt;li&gt;Independently computing the file hash, that will be compared with the one the author provided.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;If the two hashes (the one you computed at step 3 and the one you got from the author at step 2) are identical, you can be sure that the file has not been altered.&lt;/p&gt;
+
+&lt;p&gt;Does it seem complicated? Worry not: it isn’t, and in a few paragraphs I’ll guide you through the whole process.&lt;/p&gt;
+
+&lt;p&gt;Before that, I’d like to say a few words on another practical application of hashes: &lt;strong&gt;Password verification&lt;/strong&gt;.
+When you log in with your username and password on a website, you’re sending your credentials over the Internet to a powerful computer (that from now on I will call &lt;em&gt;web server&lt;/em&gt;) located somewhere in the world. This web server performs many tasks and—in particular, during the login phase—it will check if you are really &lt;em&gt;you&lt;/em&gt;.
+This is an extremely delicate process, &lt;strong&gt;for two reasons&lt;/strong&gt;.
+First—if you’re not using a secure protocol such as https—someone could intercept the message containing your credentials that you’re sending to the web server and—therefore—steal your password.
+Second, to be able to check the correctness of your username and password combination, the web server must store a copy of your credentials in clear.
+This means that if someone manages to break into the web server and read its content, he/she will be able to read your username and password.
+To avoid this problem, hashes are generally used.
+Instead of transmitting your password “as is,” you send its hash. If an attacker intercepts your message, he/she won’t be able to read your password (because given only the hash, no one can obtain the original message, remember?).
+If an attacker manages to obtain access to the web server, he/she won’t be able to read your password there, because the web server will just store its hash, used for the comparison.&lt;/p&gt;
+
+&lt;h1 id=&quot;part-2-a-practical-hash-tutorial&quot;&gt;Part 2: A practical hash tutorial&lt;/h1&gt;
+&lt;p&gt;Now, it’s finally time to get our hands dirty!&lt;/p&gt;
+
+&lt;h2 id=&quot;first-easy-use-case-checking-that-two-strings-are-identical&quot;&gt;First (easy) use case: checking that two strings are identical&lt;/h2&gt;
+&lt;p&gt;Let’s go back to our pair of twin “Hello, world!” strings.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Hello, world!&lt;/li&gt;
+  &lt;li&gt;Hello,‌ w‌o‌rld!&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;They look identical, but we want to &lt;em&gt;make sure&lt;/em&gt; they are indeed equal. We now know very well that hashes are an excellent tool to use for this purpose.&lt;/p&gt;
+
+&lt;p&gt;To compute the two hashes with the fancy calculator we used before, we would first need to get the numeric representation of the two strings. However, any “real” hash calculator can directly process text or documents. Therefore—for this tutorial—we will use a more sophisticated, real-world tool which transforms our input in a hash by following a well-standardized “recipe” called &lt;a href=&quot;https://en.wikipedia.org/wiki/SHA-2&quot;&gt;SHA-256&lt;/a&gt;—a fancy name for a well-designed sequence of mathematical operations that will produce our desired result.&lt;/p&gt;
+
+&lt;p&gt;This time you don’t need to press any button. You can just enter (or paste) some text in the box below, and the result will automagically appear in the lower field while you type. Try it!&lt;/p&gt;
+
+&lt;p&gt;&lt;input id=&quot;inputText&quot; type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;Write/paste here the text you want to hash &quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;form-group has-success&quot;&gt;
+  &lt;input id=&quot;outputHash&quot; type=&quot;text&quot; disabled=&quot;&quot; class=&quot;form-control&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Wait. What are those letters? The result is not a number anymore! &lt;em&gt;Or is it?&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;If you’re not comfortable with &lt;a href=&quot;https://en.wikipedia.org/wiki/Numeral_system&quot;&gt;numeral systems&lt;/a&gt;, I’ll invite to look carefully at the resulting hash and notice that it’s not just a bunch of random numbers and letters. It is a bunch of numbers and &lt;strong&gt;letters from “a” to “f”&lt;/strong&gt;. You will never get a “g” in the result. Only 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, a, b, c, d, e, and f are allowed. If you count them, they make up for 16 symbols, which are used to represent numbers in the hexadecimal numeral system, or “base 16”.&lt;/p&gt;
+
+&lt;p&gt;A mathematical explanation of numeral systems is not in the scope of this post. What you need to know is that you can represent the same number in different ways. We usually count using the decimal numeral system (or “base 10”), which has 10 symbols (the figures from 0 to 9). This—however—is not the only way a number can be represented. Before, we said that computers can just read “0s” and “1s”. That’s another numeral system (called binary or “base 2”) used to represent numbers with just two symbols. Think of numeral systems as if they were different alphabets: a word (flower) may have the same meaning in English and Chinese, but its two representations (“flower” and “花”) are written in different ways, with different rules, with different symbols.&lt;/p&gt;
+
+&lt;p&gt;We are now ready to finally prove whether the two “Hello, world!” strings are identical or not. Paste them into the tool and see the result.&lt;/p&gt;
+
+&lt;p&gt;As you could have imagined, the two resulting hashes are different. To help you visualize the result, the tool will turn green when you paste the first string, and red when you paste the second one.
+If you try to manually type “Hello, world!”, you will get the same result as the first string. That’s because they are the same! The second one—however—has been altered by inserting a couple of characters that are called “invisible.” Don’t worry, it’s nothing dangerous. But those invisible characters may be the equivalent of some malicious lines of code in a program that you may install on your computer.&lt;/p&gt;
+
+&lt;p&gt;Well done, you successfully used hashes to verify the integrity of a string! Let’s now move on to a more advanced (but more practical) use case.&lt;/p&gt;
+
+&lt;h2 id=&quot;second-advanced-use-case-checking-the-integrity-of-a-downloaded-file&quot;&gt;Second (advanced) use case: checking the integrity of a downloaded file&lt;/h2&gt;
+
+&lt;p&gt;It is now time to try and use hashes in a real-world use case. Let’s use the Tor browser example that I previously mentioned. We are going to check that the installer we’ll download from the Tor download page has not been maliciously modified. Since we’ll need to compute the hash of a file, we’ll also need to use a new tool. There are many options you can choose from, and it is always better to install such a tool on your computer (if you’re running a *nix OS, it may be already there!). However, since every operating system (Windows, OS X, iOS, Android, Linux…) has a different set of tools, for the sake of simplicity I will show you the procedure using a practical (but less secure) &lt;a href=&quot;https://md5file.com/calculator&quot;&gt;online tool&lt;/a&gt;. Keep in mind that a local tool will behave in a very similar way, so don’t worry, I’m not going to oversimplify things. If you want more details on how to use a local tool, leave a comment and I will gladly get back to you!&lt;/p&gt;
+
+&lt;p&gt;Let’s start!&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;First step consists of going to the &lt;a href=&quot;https://www.torproject.org&quot;&gt;Tor website&lt;/a&gt; and then to the &lt;a href=&quot;https://www.torproject.org/download/download-easy.html.en&quot;&gt;Tor download page&lt;/a&gt;. Depending on your operating system, you’ll download a different version of the installer. If—for example—you’re under Windows, the file you’ll download will have a name similar to &lt;code class=&quot;highlighter-rouge&quot;&gt;torbrowser-install-7.0.10_en-US.exe&lt;/code&gt;. &lt;strong&gt;Don’t open this file before verifying its integrity!&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;After having downloaded the installer and noted its name, go to &lt;a href=&quot;https://dist.torproject.org/torbrowser/7.0.10/sha256sums-signed-build.txt&quot;&gt;this page&lt;/a&gt; (hosted on another domain, using the secure https protocol) where the authors of Tor published a long list of hashes corresponding to their released files. &lt;strong&gt;Note&lt;/strong&gt;: if you haven’t downloaded the version 7.0.10, the previous link will not be the right one for you. You’ll need to manually substitute [VERSION] in the following URL and use this page instead:
+https://dist.torproject.org/torbrowser/[VERSION]/sha256sums-signed-build.txt&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;When you’re on the page with the hash list, use the search function of your browser (generally accessed with ctrl+f or cmd+f) and search for the filename you downloaded in the first step (for American English speakers on Windows, it will be something like &lt;code class=&quot;highlighter-rouge&quot;&gt;torbrowser-install-7.0.10_en-US.exe&lt;/code&gt;).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Note the corresponding hash that appears on the left of the filename you searched for. If your filename is called &lt;code class=&quot;highlighter-rouge&quot;&gt;torbrowser-install-7.0.10_en-US.exe&lt;/code&gt;, the corresponding hash is &lt;code class=&quot;highlighter-rouge&quot;&gt;f91096d3662081ea8b2001812b860fadbb5dedd9fd663a071267e3b47d805c92&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;It is now time to compute the hash by ourselves, using the file we downloaded. We’ll—therefore—need the tool I mentioned at the beginning of this tutorial. You can use your own if you have one, or you can &lt;a href=&quot;https://md5file.com/calculator&quot;&gt;click here to use a practical online tool&lt;/a&gt;. Select the file you downloaded at the first step and let the tool process it.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;If you’re using the online tool I provided, it will by default return a list of different hashes (SHA-1, SHA-256, SHA-384, SHA-512). Since the Tor developers provided us with the SHA-256 hash, we are interested in that line. Note the result.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Now you should compare the two hashes that you got from steps 4 and 6. If everything went fine, they should be identical. If they are, it is now safe to install the Tor browser you downloaded (but don’t do it if you don’t want to!).&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Congratulations, you successfully checked the integrity of a potentially malicious file that you downloaded from the Internet. This is a very useful process to do, especially when downloading open source applications from a dubious source.&lt;/p&gt;
+
+&lt;p&gt;I hope the concept of hash is now somewhat clear to you: if you have any question, drop a comment below, and I will get back to you as soon as possible!&lt;/p&gt;</content><author><name>Federico Madotto</name></author><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://blog.federicomadotto.com/20171010/ipad-journal-coffee.jpeg" /></entry><entry><title type="html">Not every new journey begins on a Monday.</title><link href="http://blog.federicomadotto.com/2017/10/10/not-every-new-journey-begins-on-a-monday/" rel="alternate" type="text/html" title="Not every new journey begins on a Monday." /><published>2017-10-10T00:00:00+02:00</published><updated>2017-10-10T00:00:00+02:00</updated><id>http://blog.federicomadotto.com/2017/10/10/not-every-new-journey-begins-on-a-Monday.</id><content type="html" xml:base="http://blog.federicomadotto.com/2017/10/10/not-every-new-journey-begins-on-a-monday/">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
 &lt;p&gt;As a hopelessly curious person, I’m an avid reader.
 Maybe not an avid “real book” reader, but every day and every hour or two I regularly stop for around ten minutes and let my mind absorb some new, fresh ideas from every appealing (but well-respected) source I can find.
 I don’t really care much about their topic. I read the news, I learn about technology, entrepreneurship, marketing, cultures, sexism (shoutouts to my girlfriend, who carefully picks and forwards to my reading list some essays on this)… and yes, I read a lot about Blockchain technology.&lt;/p&gt;
